@@ -73,9 +73,6 @@ public protocol DKImagePickerControllerUIDelegate {
 		Accessory view below content. default is nil.
 	*/
 	func imagePickerControllerFooterView(imagePickerController: DKImagePickerController) -> UIView?
-
-    
-    
 }
 
 /**
@@ -93,7 +90,6 @@ public enum DKImagePickerControllerSourceType : Int {
 	case Camera, Photo, Both
 }
 
-
 // MARK: - Public DKImagePickerController
 
 /**
@@ -104,7 +100,7 @@ public class DKImagePickerController : UINavigationController {
 	public var UIDelegate: DKImagePickerControllerUIDelegate = {
 		return DKImagePickerControllerDefaultUIDelegate()
 	}()
-
+	
     /// Forces selection of tapped image immediatly.
 	public var singleSelect = false
 		
@@ -274,7 +270,6 @@ public class DKImagePickerController : UINavigationController {
                 self.navigationBarHidden = false
 				let rootVC = DKAssetGroupDetailVC()
 				rootVC.imagePickerController = self
-                
 				self.UIDelegate.prepareLayout(self, vc: rootVC)
 				self.updateCancelButtonForVC(rootVC)
 				self.setViewControllers([rootVC], animated: false)
@@ -408,8 +403,9 @@ public class DKImagePickerController : UINavigationController {
 	}
 	
     public func done() {
-		self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+		//self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         self.didSelectAssets?(assets: self.selectedAssets)
+        self.selectedAssets = [DKAsset]()
     }
     
     // MARK: - Selection Image
