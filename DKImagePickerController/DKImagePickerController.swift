@@ -103,7 +103,9 @@ public class DKImagePickerController : UINavigationController {
 	
     /// Forces selection of tapped image immediatly.
 	public var singleSelect = false
-		
+	
+    public var backgroundColor = UIColor.whiteColor()
+    
     /// The maximum count of assets which the user will be able to select.
     public var maxSelectableCount = 999
 	
@@ -203,7 +205,7 @@ public class DKImagePickerController : UINavigationController {
             DKAssetGroupDetailVC.DKAssetCell.DKImageCheckView.numberColor = self.numberColor!
         }
     }
-    
+
     //Set the font of the number when object is selected
     public var numberFont: UIFont? {
         didSet {
@@ -217,13 +219,13 @@ public class DKImagePickerController : UINavigationController {
             DKAssetGroupDetailVC.DKAssetCell.DKImageCheckView.checkedBackgroundColor = self.checkedBackgroundImgColor!
         }
     }
-    
+
     public var backgroundCollectionViewColor: UIColor? {
         didSet {
             DKAssetGroupDetailVC.backgroundCollectionViewColor = self.backgroundCollectionViewColor
         }
     }
-    
+
     public var selectedAssets = [DKAsset]()
 	
     public convenience init() {
