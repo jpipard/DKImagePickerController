@@ -198,33 +198,6 @@ public class DKImagePickerController : UINavigationController {
 			}
         }
     }
-    
-    //Set the color of the number when object is selected
-    public var numberColor: UIColor? {
-        didSet {
-            DKAssetGroupDetailVC.DKAssetCell.DKImageCheckView.numberColor = self.numberColor!
-        }
-    }
-
-    //Set the font of the number when object is selected
-    public var numberFont: UIFont? {
-        didSet {
-            DKAssetGroupDetailVC.DKAssetCell.DKImageCheckView.numberFont = self.numberFont!
-        }
-    }
-    
-    //Set the color of the object outline when object is selected
-    public var checkedBackgroundImgColor: UIColor? {
-        didSet {
-            DKAssetGroupDetailVC.DKAssetCell.DKImageCheckView.checkedBackgroundColor = self.checkedBackgroundImgColor!
-        }
-    }
-
-    public var backgroundCollectionViewColor: UIColor? {
-        didSet {
-            DKAssetGroupDetailVC.backgroundCollectionViewColor = self.backgroundCollectionViewColor
-        }
-    }
 
     public var selectedAssets = [DKAsset]()
 	
