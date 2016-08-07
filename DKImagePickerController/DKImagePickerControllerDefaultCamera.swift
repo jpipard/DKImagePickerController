@@ -29,8 +29,10 @@ public class DKImagePickerControllerDefaultUIDelegate: NSObject, DKImagePickerCo
 	// Delegate methods...
 	
 	public func prepareLayout(imagePickerController: DKImagePickerController, vc: UIViewController) {
+        if !imagePickerController.singleSelect {
+          		vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.doneButton)
+        }
 		self.imagePickerController = imagePickerController
-		vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.doneButton)
 	}
 	
 	public func imagePickerControllerCreateCamera(imagePickerController: DKImagePickerController,
